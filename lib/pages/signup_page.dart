@@ -43,83 +43,85 @@ class _SignUpPageState extends State<SignUpPage> {
       //   ),
       //   backgroundColor: Colors.blue,
       // ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: screenWidth,
-              height: screenHeight,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/rain.jpg'),
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.3),
-                    BlendMode.darken,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: screenWidth,
+                height: screenHeight,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/rain.jpg'),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.3),
+                      BlendMode.darken,
+                    ),
                   ),
                 ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 400,
-                    width: 500,
-                    margin: EdgeInsets.only(top:50),
-                    decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.7),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Center(child: Text('Sign UP', style: TextStyle(fontSize: 30, color: Colors.white),)),
-                        SizedBox(height: 30),
-                        _buildTextField("username", _usernameController, Icons.person),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        _buildTextField("email", _emailController, Icons.person),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        _buildTextField("password", _passwordController, Icons.person, isPassword:true,),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        SizedBox(height: 30.0),
-                        Center(
-                          child: Container(
-                            height: 40,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(100),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 420,
+                      width: 450,
+                      margin: EdgeInsets.only(top:30),
+                      decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.7),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Center(child: Text('Sign UP', style: TextStyle(fontSize: 30, color: Colors.white),)),
+                          SizedBox(height: 30),
+                          _buildTextField("username", _usernameController, Icons.person),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          _buildTextField("email", _emailController, Icons.person),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          _buildTextField("password", _passwordController, Icons.person, isPassword:true,),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(height: 30.0),
+                          Center(
+                            child: Container(
+                              height: 40,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              child: MaterialButton(
+                                onPressed: () {
+                                  _signUp();
+                                },
+                                child: Text('Sign Up'),
+                              ),
                             ),
-                            child: MaterialButton(
+                          ),
+                          SizedBox(height: 16.0),
+                          Center(
+                            child: TextButton(
                               onPressed: () {
-                                _signUp();
+                                Navigator.pop(context); // Kembali ke halaman sebelumnya (biasanya ke halaman login)
                               },
-                              child: Text('Sign Up'),
+                              child: Text('I already have an account? Login'),
                             ),
                           ),
-                        ),
-                        SizedBox(height: 16.0),
-                        Center(
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.pop(context); // Kembali ke halaman sebelumnya (biasanya ke halaman login)
-                            },
-                            child: Text('I already have an account? Login'),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

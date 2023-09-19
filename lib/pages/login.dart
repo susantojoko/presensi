@@ -40,9 +40,8 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Center(
               child: Container(
-                margin: EdgeInsets.all(20),
-                color: Colors.black.withOpacity(0.7),
-                height: 400,
+                color: Color.fromRGBO(0, 0, 0, 1).withOpacity(0.7),
+                height: 410,
                 width: 550,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 40.0),
+                    SizedBox(height: 10.0),
                     _buildTextField("Email", _emailController, Icons.person),
                     SizedBox(height: 10),
                     _buildTextField("Password", _passwordController, Icons.lock,
