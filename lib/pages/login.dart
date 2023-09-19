@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:presensi/pages/forgot.dart';
 import 'package:presensi/pages/home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -140,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
       child: TextButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => MainHome()));
+              context, MaterialPageRoute(builder: (context) => ForgotPasswordPage()));
         },
         child: Text("Forgot Password"),
       ),
@@ -194,7 +195,7 @@ class _LoginPageState extends State<LoginPage> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        Future.delayed(Duration(seconds: 2), () {
+        Future.delayed(Duration(seconds: 1), () {
           Navigator.of(context).pop(); // Menutup dialog setelah 2 detik
           Navigator.push(context, MaterialPageRoute(builder: (context) => MainHome())); // Pindah halaman setelah dialog ditutup
         });

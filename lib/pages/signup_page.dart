@@ -139,7 +139,7 @@ class _SignUpPageState extends State<SignUpPage> {
       showDialog(
         context: context,
         builder: (BuildContext context) {
-          Future.delayed(Duration(seconds: 3), () {
+          Future.delayed(Duration(seconds: 1), () {
             Navigator.of(context).pop(); // Menutup alert dialog setelah 3 detik
           });
 
