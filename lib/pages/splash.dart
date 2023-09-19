@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             SizedBox(height: 16.0),
             Text(
-              'SAMUN',
+              'APP PRESENSI',
               style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
