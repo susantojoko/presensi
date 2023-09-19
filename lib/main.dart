@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white
       ),
-      title: "Ecommerce",
+      title: "presensi",
       initialRoute: '/',
       routes: {
         '/login': (context) => LoginPage(),

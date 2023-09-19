@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:page_view_indicators/page_view_indicators.dart';
 import 'login.dart';
 
-
-
-
-
 class OnboardingPage extends StatefulWidget {
   @override
   _OnboardingPageState createState() => _OnboardingPageState();
@@ -17,18 +13,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
   final List<OnboardingItem> _onboardingItems = [
     OnboardingItem(
       title: 'Selamat Datang',
-      description: 'Selamat datang di aplikasi kami!',
+      description: 'Selamat datang di aplikasi Absensi kami!',
       image: 'assets/images/ahlanWaSahlan.png',
     ),
     OnboardingItem(
       title: 'Fitur Pertama',
-      description: 'Fitur pertama yang hebat di aplikasi ini.',
+      description: 'Fitur pertama yang hebat di aplikasi ini adalah mudah digunakan. ada beberapa menu seperti menuabsen dan riwayat absen',
       image: 'assets/images/fitur.png',
     ),
     OnboardingItem(
       title: 'Mulai Sekarang',
       description: 'Sekarang Anda siap untuk mulai menggunakan aplikasi kami.',
-      image: 'assets/images/start.jpg',
+      image: 'assets/images/start.png',
     ),
   ];
 
@@ -74,10 +70,15 @@ class _OnboardingPageState extends State<OnboardingPage> {
             SizedBox(height: 20),
             _currentPage == _onboardingItems.length - 1
                 ? Container(
-                  height: 100,
-                  width: 250,
+                  margin: EdgeInsets.only(bottom: 20),
+                  width: 150,
+                  height: 50,
+                  decoration: BoxDecoration(
+                     color: Colors.blue.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   child: Center(
-                    child: ElevatedButton(
+                    child: MaterialButton(
                         onPressed: () {
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
@@ -85,7 +86,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             ),
                           );
                         },
-                        child: Text('Selesai'),
+                        child: Text('Selesai', style: TextStyle(fontSize: 20),),
                       ),
                   ),
                 )
