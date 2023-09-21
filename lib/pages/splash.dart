@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   final GlobalKey<NavigatorState> navigatorKey;
@@ -22,27 +23,41 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/images/splash.png',
-              width: 200,
-              height: 200,
-            ),
-            SizedBox(height: 16.0),
-            Text(
-              'APP PRESENSI',
-              style: TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
+        child: Container(
+          width: screenWidth,
+          height: screenHeight,
+          decoration: BoxDecoration(
+           image: DecorationImage(image: AssetImage('assets/images/splash1.png'),
+           fit: BoxFit.cover,)
+          ),
+          child: Center(
+            child: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Lottie.asset(
+                'assets/animasi/animasifish.json', // Ganti dengan path ke file animasi Lottie Anda
+                fit: BoxFit.cover,
+                width: 100,
+                height: 200,
+              ),
+                  SizedBox(height: 10.0),
+                  Text(
+                    'APP PRESENSI',
+                    style: TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

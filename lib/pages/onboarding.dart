@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_view_indicators/page_view_indicators.dart';
 import 'login.dart';
+import 'package:lottie/lottie.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
@@ -14,17 +15,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
     OnboardingItem(
       title: 'Selamat Datang',
       description: 'Selamat datang di aplikasi Absensi kami!',
-      image: 'assets/images/ahlanWaSahlan.png',
+      image: 'assets/animasi/animasi6.json',
     ),
     OnboardingItem(
       title: 'Fitur Pertama',
       description: 'Fitur pertama yang hebat di aplikasi ini adalah mudah digunakan. ada beberapa menu seperti menuabsen dan riwayat absen',
-      image: 'assets/images/fitur.png',
+      image: 'assets/animasi/animasi5.json',
     ),
     OnboardingItem(
       title: 'Mulai Sekarang',
       description: 'Sekarang Anda siap untuk mulai menggunakan aplikasi kami.',
-      image: 'assets/images/start.png',
+      image: 'assets/animasi/animasi4.json',
     ),
   ];
 
@@ -36,7 +37,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       body: Container(
        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/obd2.jpg'), //background
+            image: AssetImage('assets/images/background3.png'), //background
             fit: BoxFit.cover,
           ),
        ),
@@ -151,7 +152,7 @@ class OnboardingItemWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(
+        Lottie.asset(
           item.image,
           height: 200,
         ),
